@@ -4,7 +4,8 @@
 #include <iomanip>
 //#define BINARY
 //#define PASCAL
-#define ROMB          // ромб чуть-чуть проще Вашего
+//#define ROMB          // ромб чуть-чуть проще Вашего
+#define HEX
 using namespace std;
 using std::cin;
 using std::cout;
@@ -28,7 +29,7 @@ void main()
 
 
 #ifdef PASCAL
-    for (int i = 0; i < n; i++)
+    /*for (int i = 0; i < n; i++)
     {
         int a = 1;
         cout << setw(n - i);
@@ -40,7 +41,7 @@ void main()
 
         }
         cout << endl;
-    }
+    }*/
 
 #endif // PASCAL
 
@@ -56,8 +57,17 @@ void main()
     }   cout << endl;
 
 #endif // BINARY
+#ifdef HEX
+    for (int i = 65536; i >= 1; i /= 16)
+    {
+        int a = n / i;
+        n %= i;
 
-        
+        cout << a << " ";
+    }
+
+#endif // HEX
+
 }
 
   
